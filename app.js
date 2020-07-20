@@ -37,6 +37,11 @@ app.post("/payload", (req, res) => {
                 .get(process.env.GUILD_ID)
                 .channels.cache.get(process.env.CREATE_NEW_TEAM_ID)
                 .send(issue);
+        } else if (label === "bounty") {
+            client.guilds.cache
+                .get(process.env.GUILD_ID)
+                .channels.cache.get(process.env.METABOUNTIES_ID)
+                .send(issue);
         }
     }
 
